@@ -16,6 +16,7 @@ const Input: React.FC<InputProps> = ({ id, type, onChange, value, label }) => {
         type={type}
         value={value}
         placeholder=" "
+        required
         className="
         block
         rounded
@@ -25,6 +26,7 @@ const Input: React.FC<InputProps> = ({ id, type, onChange, value, label }) => {
         focus:outline-none
         focus:ring-0
         w-full
+        h-[3.125rem]
         text-white
         bg-[#333]
         appearance-none
