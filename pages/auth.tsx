@@ -1,8 +1,8 @@
 import Input from "@/Components/Login/Input";
-import Footer from "@/Components/Footer";
-import Image from "next/image";
+import Footer from "@/Components/Footer/Footer";
 import Link from "next/link";
 import { useCallback, useState } from "react";
+import Image from "next/image";
 
 const Login = () => {
   const [userName, setUserName] = useState("");
@@ -16,17 +16,24 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="relative bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover h-full w-full">
-      <div className="h-full w-full bg-black bg-opacity-50">
-        <nav className="xl:py-[25.1px] xl:px-14">
-          <Image src="/images/logo.png" alt="logo" width={167} height={45} />
+    <div className="relative bg-black md:bg-black lg:bg-[url('/images/hero.jpg')] xl:bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover h-full w-full px-6 lg:px-0 xl:px-0">
+      <div className="h-full w-full bg-black lg:bg-opacity-50">
+        <nav className="h-12 pt-5 pb-10 lg:h-16 xl:h-20 xl:py-8 lg:px-20 xl:px-20">
+          <Image
+            src="/images/logo.png"
+            alt="logo"
+            layout="responsive"
+            width={167}
+            height={45}
+            className="!w-20 !h-6 lg:!w-[167px] lg:!h-[45px] xl:!w-[167px] xl:!h-[45px]"
+          />
         </nav>
         <div className="flex justify-center items-center">
-          <div className="xl:w-[450px] xl:h-auto xl:px-[68px] xl:pt-[60px] xl:pb-[40px] bg-black/[.75] rounded self-center">
-            <h1 className="text-white xl:text-[32px] font-bold xl:mb-7">
+          <div className="w-full lg:w-[26rem] lg:px-12 lg:pt-12 xl:w-[450px] lg:pb-8 h-auto xl:px-[68px] xl:pt-[60px] xl:pb-10 bg-black/[.75] rounded self-center">
+            <h1 className="text-white text-3xl lg:text-3xl mb-8 lg:mb-5 xl:text-[32px] font-bold xl:mb-7">
               {option === "login" ? "Sign In" : "Sign Up"}
             </h1>
-            <div className="flex flex-col gap-[72px]">
+            <div className="flex flex-col gap-7 lg:gap-12 xl:gap-[72px]">
               <div className="flex flex-col gap-3">
                 <form className="flex flex-col gap-4">
                   {option !== "login" && (
@@ -54,7 +61,7 @@ const Login = () => {
                     value={password}
                     label="Password"
                   />
-                  <button className="xl:w-full xl:h-12 bg-[#E50914] mt-8 rounded text-white font-bold">
+                  <button className="w-full h-10 xl:h-12 bg-[#E50914] mt-7 lg:mt-6 xl:mt-8 rounded text-white font-bold">
                     {option === "login" ? "Sign In" : "Sign Up"}
                   </button>
                 </form>
@@ -70,7 +77,7 @@ const Login = () => {
                       />
                       <label
                         htmlFor="remember-me"
-                        className="text-[#B3B3B3] xl:ml-1 xl:text-[13px]"
+                        className="text-[#B3B3B3] ml-1 xl:text-[13px]"
                       >
                         Remember me
                       </label>
